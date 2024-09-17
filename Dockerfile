@@ -8,9 +8,7 @@ RUN apt-get update && \
 
 
 
-# Устанавливаем необходимые зависимости
-RUN pip install nltk
-# Устанавливаем pip (если он не был установлен)
+# Устанавливаем pip (если он не был убстановлен)
 # Это обычно необязательно, если вы используете официальный образ Python
 RUN python3 -m ensurepip --upgrade
 
@@ -18,4 +16,4 @@ RUN python3 -m ensurepip --upgrade
 WORKDIR /app
 COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
-CMD [ "python", "your_script.py" ]
+CMD [ "python", "ml-pipeline.py" ]
